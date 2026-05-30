@@ -51,10 +51,10 @@
         <div class="main-nav">
           <ul class="nav-links">
             <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/about/index.html" class="nav-link">About Us</a></li>
-            <li><a href="/news-events/index.html" class="nav-link active">News &amp; Events</a></li>
-            <li><a href="/publications/index.html" class="nav-link">Publications</a></li>
-            <li><a href="/team/index.html" class="nav-link">Our Team</a></li>
+            <li><a href="../about/index.html" class="nav-link">About Us</a></li>
+            <li><a href="index.html" class="nav-link active">News &amp; Events</a></li>
+            <li><a href="../publications/index.html" class="nav-link">Publications</a></li>
+            <li><a href="../team/index.html" class="nav-link">Our Team</a></li>
           </ul>
         </div>
       </nav>
@@ -112,7 +112,7 @@
         });
       }
 
-      fetch('/data/linkedin.json').then(function (r) {
+      fetch('../data/linkedin.json').then(function (r) {
         if (!r.ok) throw new Error('no feed');
         return r.json();
       }).then(function (json) {
@@ -145,14 +145,14 @@
         root.innerHTML = html;
       }
 
-      fetch('/data/posts.json').then(function (r) {
+      fetch('../data/posts.json').then(function (r) {
         if (!r.ok) throw new Error('no posts');
         return r.json();
       }).then(function (json) {
         renderPosts(json.posts || json);
       }).catch(function () {
         // fallback to previous linkedin feed
-        fetch('/data/linkedin.json').then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (j) {
+        fetch('../data/linkedin.json').then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (j) {
           renderPosts((j.posts || j).map(function (p) { return { title: p.title||p.text, date: p.date, excerpt: (p.text||'').slice(0,200), link: p.link }; }));
         }).catch(function () {
           root.innerHTML = '<div class="linkedin-empty">Unable to load posts. You can add `data/posts.json` or run `npm run build:data` to fetch LinkedIn posts.</div>';
