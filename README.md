@@ -2,6 +2,22 @@ iadapt-redesign — local static server
 
 This repository contains a built static site under `iadapt-redesign/dist`.
 
+GitHub Pages
+------------
+
+The live site is published from the **repository root** (Settings → Pages → Deploy from branch → `/ (root)`).
+
+After you change files in `iadapt-redesign/dist`, sync them to the root and push:
+
+```powershell
+npm run build:pages
+git add .
+git commit -m "Update site for GitHub Pages"
+git push
+```
+
+Alternatively, set Pages source to **GitHub Actions** and push to `main`; the workflow in `.github/workflows/pages.yml` deploys automatically.
+
 To serve the site locally (no build step required):
 
 ```powershell

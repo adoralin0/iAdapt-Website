@@ -6,7 +6,8 @@
     "start": "node server.js",
     "start:auto": "node server.js",
     "fetch:linkedin": "python scripts/fetch_linkedin.py",
-    "build:data": "npm run fetch:linkedin"
+    "build:data": "npm run fetch:linkedin",
+    "build:pages": "node scripts/prepare-github-pages.js --root"
   },
   "engines": {
     "node": ">=14"
