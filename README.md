@@ -1,8 +1,8 @@
 iAdapt Research Center website
 
-Static site files live at the repository root (`index.html`, `about/`, `assets/`, etc.).
+Static site files live at the repository root. The homepage is `home/index.html` (root `index.html` redirects there).
 
-GitHub Pages: Settings → Pages → Deploy from branch → **/ (root)**. The homepage loads at your repo URL with no redirect.
+GitHub Pages: Settings → Pages → Deploy from branch → **/ (root)**.
 
 Local preview:
 
