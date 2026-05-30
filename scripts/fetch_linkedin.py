@@ -1,5 +1,5 @@
 """
-Template script to fetch recent organization shares from LinkedIn and write `dist/data/linkedin.json`.
+Template script to fetch recent organization shares from LinkedIn and write `data/linkedin.json`.
 Requires:
   - A LinkedIn API access token with the appropriate permissions.
   - The organization ID (numeric) for the LinkedIn company page (e.g., UF planning org id).
@@ -23,7 +23,7 @@ from datetime import datetime
 
 TOKEN = os.environ.get('LINKEDIN_ACCESS_TOKEN')
 ORG_ID = os.environ.get('LINKEDIN_ORG_ID')
-OUT_FILE = os.path.join(os.path.dirname(__file__), '..', 'iadapt-redesign', 'dist', 'data', 'linkedin.json')
+OUT_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'linkedin.json')
 
 if not TOKEN or not ORG_ID:
     print('Please set LINKEDIN_ACCESS_TOKEN and LINKEDIN_ORG_ID environment variables')

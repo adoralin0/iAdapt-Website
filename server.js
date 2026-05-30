@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = process.env.PORT || 8080;
-const DIST = path.join(__dirname, 'iadapt-redesign', 'dist');
+const DIST = __dirname;
 
 const mime = {
   '.html': 'text/html',
